@@ -7,13 +7,15 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="#" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+j6q5rUE8CEjaAzr0NCsjB/Jm2C5d8F94EQsGVV" crossorigin="anonymous">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Additional CSS -->
-    <link rel="stylesheet" href="esteroides/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="fuentes/iconic/css/material-design-iconic-font.min.css">
 
@@ -72,6 +74,44 @@
     </style>
 </head>
 <body>
+<!-- Modal Amarillo -->
+<div class="modal fade" id="modalAmarillo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="height: 100%; width: 100%;">
+      <div class="modal-content" style="background-color: yellow; height: 300px; width: 300px; margin: auto;">
+        <!-- No hay contenido adicional -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Azul -->
+  <div class="modal fade" id="modalAzul" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="height: 100%; width: 100%;">
+      <div class="modal-content" style="background-color: blue; height: 300px; width: 300px; margin: auto;">
+        <!-- No hay contenido adicional -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Verde -->
+  <div class="modal fade" id="modalVerde" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="height: 100%; width: 100%;">
+      <div class="modal-content" style="background-color: green; height: 300px; width: 300px; margin: auto;">
+        <!-- No hay contenido adicional -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Rojo -->
+  <div class="modal fade" id="modalRojo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="height: 100%;width: 100%;">
+    <div class="modal-dialog" style="display: flex;height: 100%;width: 100%; justify-content: center;align-items: center;">
+      <div class="modal-content" style="background-color: red; height: 300px;width: 300px;">
+        <!-- No hay contenido adicional -->
+      </div>
+    </div>
+  </div>
+  
+
+  
     <div class="container-login">
         <div class="wrap-login">
             <img src="img/bienal1.jpeg" alt="Imagen lateral" class="imagen-lateral">
@@ -85,11 +125,11 @@
                     </div>
                     <div class="form-group">
                         <label for="cedula">Num. de C.I./Doc. Identidad</label>
-                        <input type="text" class="form-control" id="cedula" placeholder="Num. de C.I./Doc. Identidad">
+                        <input type="number" class="form-control" id="cedula" placeholder="Num. de C.I./Doc. Identidad">
                     </div>
                     <div class="form-group">
                         <label for="celular">Num. de Celular</label>
-                        <input type="text" class="form-control" id="celular" placeholder="Num. de Celular">
+                        <input type="number" class="form-control" id="celular" placeholder="Num. de Celular">
                     </div>
                     <div class="form-group">
                         <label for="observacion">Observaciones</label>
@@ -117,7 +157,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- Local JS Files -->
-    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="popper/popper.min.js"></script>
     <script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
