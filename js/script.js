@@ -22,7 +22,7 @@
 
 
         $.ajax({
-            url: `http://192.168.27.72:4000/participantes/cedula/${cedula}`,
+            url: `${ENV.API_URL}/cedula/${cedula}`,
             type: "POST",
             // data: {
             //     nombreApellido: nombreApellido,

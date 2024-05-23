@@ -23,7 +23,7 @@
 
 
         $.ajax({
-            url: `http://192.168.27.72:4000/participantes/nocedula`,
+            url: `${ENV.API_URL}/participantes/nocedula`,
             type: "POST",
             data: {
                 nombreApellido: nombreApellido,

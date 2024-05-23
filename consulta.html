@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-
+    <script src="config/config.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -76,18 +76,19 @@
         const creacionTabla = ()=>{
         
             $.ajax({
-                url: "http://192.168.27.72:4000/participantes/obtener",
+                url: `${ENV.API_URL}/participantes/obtener`,
                 type: "GET",
                 success: function(response){
                    const dataSet= response.data.map(e=>[e.participantenombre.split(" ")[0],e.participantenombre.split(" ")[1]===undefined?'':e.participantenombre.split(" ")[1],e.participantedoc,e.participantecolor])
                    $('#tablaUsuarios').DataTable({
-                    data: dataSet,
+                    data: dataSet.reverse(),
                     columns: [
                         { title: "Apellido" },
                         { title: "Nombre" },
                         { title: "Cedula" },
                         { title: "Color" }
-                    ]
+                    ],
+                    sorting: false
                 });
                 },
                 error: function(xhr, status, error){
@@ -98,7 +99,8 @@
                             { title: "Nombre" },
                             { title: "Cedula" },
                             { title: "Color" }
-                        ]
+                        ],
+                        sorting: false
                     });
                     console.log(error)
                     alert("Ocurrió un error al enviar el formulario");
