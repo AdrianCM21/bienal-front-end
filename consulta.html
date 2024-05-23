@@ -70,26 +70,44 @@
 
     <script>
         $(document).ready(function(){
-            // Datos de ejemplo
-            var dataSet = [
-                ["García", "Juan", "12345678", "Rojo"],
-                ["López", "Ana", "87654321", "Verde"],
-                ["Martínez", "Luis", "23456789", "Azul"],
-                ["Hernández", "María", "34567890", "Amarillo"],
-                ["Pérez", "Carlos", "45678901", "Naranja"]
-            ];
-
-            // Inicializar DataTable con datos de ejemplo
-            $('#tablaUsuarios').DataTable({
-                data: dataSet,
-                columns: [
-                    { title: "Apellido" },
-                    { title: "Nombre" },
-                    { title: "Cedula" },
-                    { title: "Color" }
-                ]
-            });
+        creacionTabla()
         });
+
+        const creacionTabla = ()=>{
+        
+            $.ajax({
+                url: "http://192.168.27.72:4000/participantes/obtener",
+                type: "GET",
+                success: function(response){
+                   const dataSet= response.data.map(e=>[e.participantenombre.split(" ")[0],e.participantenombre.split(" ")[1]===undefined?'':e.participantenombre.split(" ")[1],e.participantedoc,e.participantecolor])
+                   $('#tablaUsuarios').DataTable({
+                    data: dataSet,
+                    columns: [
+                        { title: "Apellido" },
+                        { title: "Nombre" },
+                        { title: "Cedula" },
+                        { title: "Color" }
+                    ]
+                });
+                },
+                error: function(xhr, status, error){
+                    $('#tablaUsuarios').DataTable({
+                        data: [],
+                        columns: [
+                            { title: "Apellido" },
+                            { title: "Nombre" },
+                            { title: "Cedula" },
+                            { title: "Color" }
+                        ]
+                    });
+                    console.log(error)
+                    alert("Ocurrió un error al enviar el formulario");
+                }
+            });
+        
+            console.log(dataSet)
+            
+            }
     </script>
 
     <!-- Local JS Files -->

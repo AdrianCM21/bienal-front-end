@@ -227,6 +227,24 @@
     -moz-transition: all 0.4s;
     transition: all 0.4s;
   }
+  .login-form-bgbtngrey {
+    position: absolute;
+    z-index: 1;
+    width: 300%;
+    height: 100%;
+    background: #7ed957;
+    background: -webkit-linear-gradient(right, #b2ff59, #69f0ae, #00e676, #00c853);
+    background: -o-linear-gradient(right, #b2ff59, #69f0ae, #00e676, #00c853);
+    background: -moz-linear-gradient(right, #b2ff59, #69f0ae, #00e676, #00c853);
+    background: linear-gradient(to right, #b2ff59, #69f0ae, #00e676, #00c853);
+    top: 0;
+    left: -100%;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
   
   .login-form-btn {
     /* font-family: Poppins-Medium; */

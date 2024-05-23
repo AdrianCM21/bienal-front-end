@@ -4,11 +4,6 @@
       handelSubmit()
     });
 
-
-
-
-
-
     const handelSubmit = ()=> $("form").submit((event)=>{
         event.preventDefault();
         const cedula = $("#cedula").val();
@@ -24,12 +19,12 @@
         $.ajax({
             url: `http://192.168.27.72:4000/participantes/cedula/${cedula}`,
             type: "POST",
-            // data: {
-            //     nombreApellido: nombreApellido,
-            //     cedula: cedula,
-            //     celular: celular,
-            //     observacion: observacion
-            // },
+            data: {
+                nombreApellido: nombreApellido,
+                cedula: cedula,
+                celular: celular,
+                observacion: observacion
+            },
             success: function(response){
             
                 if(!response.existe){
