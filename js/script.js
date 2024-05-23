@@ -18,7 +18,16 @@
         const modalColor = $('#modalColor')
         const participanteModal = $("#participanteModal")
         modal.removeClass('bg-amarillo bg-azul bg-verde bg-rojo');
-      
+        const letraFoda = $('#letraFoda')
+
+
+
+
+        modalColor.addClass('bg-amarillo');
+        
+        modal.modal('show');
+        
+       
 
 
         $.ajax({
@@ -33,7 +42,6 @@
             success: function(response){
             
                 if(!response.existe){
-                    console.log(response,response.hasOwnProperty('existe'))
                     $("#modalNoRegistrado").modal('show');
                     $("#cedula").val('');
                     $(".login-form-btn").prop('disabled', false);
@@ -52,16 +60,20 @@
                 }
                 participanteModal.html(participante.participantenombre)
                 if (color.toLowerCase().includes('amarillo')) {
+                    letraFoda.html('F')
                     modalColor.addClass('bg-amarillo');
                     modal.modal('show');
                    
                 } else if (color.toLowerCase().includes('azul')) {
+                    letraFoda.html('A')
                     modalColor.addClass('bg-azul');
                     modal.modal('show');
                 } else if (color.toLowerCase().includes('rojo')) {
+                    letraFoda.html('O')
                     modalColor.addClass('bg-rojo');
                     modal.modal('show');
                 } else if (color.toLowerCase().includes('verde')) {
+                    letraFoda.html('D')
                     modalColor.addClass('bg-verde');
                     modal.modal('show');
                 } else  {
