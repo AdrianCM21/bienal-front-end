@@ -21,15 +21,6 @@
         const letraFoda = $('#letraFoda')
 
 
-
-
-        modalColor.addClass('bg-amarillo');
-        
-        modal.modal('show');
-        
-       
-
-
         $.ajax({
             url: `${ENV.API_URL}/cedula/${cedula}`,
             type: "POST",
